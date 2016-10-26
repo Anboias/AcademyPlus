@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:19:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 15:26:09 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/26 16:30:06 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,10 @@ int		main(int argc, char **argv)
 		putchar(*f);
 		printf(" --- library function");
 	}
-	else if (isEqual(c, "ft_putchar_fd"))
-	{
-		ft_putchar_fd(*f, 1);
-	}
-	else if (isEqual(c, "ft_putnbr_fd"))
-	{
-		temp = atoi(f);
-		ft_putnbr_fd(temp, 1);
-	}
 	else if (isEqual(c, "ft_putnbr"))
 	{
 		temp = atoi(f);
 		ft_putnbr(temp);
-	}
-	else if (isEqual(c, "ft_putstr_fd"))
-	{
-		ft_putstr_fd(f, 1);
 	}
 	else if (isEqual(c, "ft_putstr"))
 	{
@@ -74,6 +61,17 @@ int		main(int argc, char **argv)
 			*memall++;
 		}
 		return (0);
+	}
+	else if (isEqual(c, "ft_strlen"))
+	{
+		printf("%d", (int)ft_strlen(f));
+		printf(" --- our function\n");
+		printf("%d", (int)strlen(f));
+		printf(" --- library function");
+	}
+	else if (isEqual(c, "ft_putendl"))
+	{
+		ft_putendl_fd(f);
 	}
 	else
 		printf("This function doesn`t exist");

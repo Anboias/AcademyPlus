@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 13:40:25 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 16:27:53 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/26 15:44:30 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/26 16:28:30 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	ft_putstr(char const *s)
+size_t	ft_strlen(char const *c)
 {
-	ft_putstr_fd(s, 1);
+	size_t i;
+
+	i = 0;
+	while (*c++)
+	{
+		i++;
+	}
+	return (i);
 }
