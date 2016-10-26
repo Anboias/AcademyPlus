@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 13:51:12 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 15:27:46 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/26 17:00:28 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_memalloc(size_t size)
 
 	p = malloc(size);
 	if (p)
-		ft_memset(p, 0, size);
+		ft_bzero(p, size);
 	return (p);
 }

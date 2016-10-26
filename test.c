@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:19:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 16:30:06 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/26 17:28:41 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		main(int argc, char **argv)
 	}
 	else if (isEqual(c, "ft_putendl"))
 	{
-		ft_putendl_fd(f);
+		ft_putendl(f);
 	}
 	else
 		printf("This function doesn`t exist");
