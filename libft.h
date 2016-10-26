@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:31:14 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 17:28:39 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/27 00:26:44 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,19 @@ void	ft_putendl_fd(char const *s, int fd);
 void 	ft_putendl(char const *s);
 
 size_t	ft_strlen(char const *s);
-char	*ft_strnew(size_t size);
+int		ft_strcmp(char const *s1, char const *s2);
+int		ft_strncmp(char const *s1, char const *s2, size_t n);
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+char	*ft_strnew(size_t size);
+char 	*ft_strmap(char const *s, char (*f)(char));
+char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memalloc(size_t size);
