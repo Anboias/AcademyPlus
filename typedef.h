@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   typedef.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/25 20:31:14 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 15:01:43 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/26 14:59:13 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/26 15:06:44 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef TYPEDEF_H
+# define TYPEDEF_H
 
-#include <string.h>
-#include "typedef.h"
+typedef unsigned char 	one_byte;
 
-void	ft_putchar(char c);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-void	*ft_memset(void *s, int c, size_t n);
-void	*ft_memalloc(size_t size);
+typedef struct			s_list
+{
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}						t_list;
 
 #endif
