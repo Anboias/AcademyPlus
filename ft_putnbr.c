@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 00:38:43 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 12:42:35 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/26 13:16:41 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/26 13:18:00 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putnbr(int n)
 {
-	write(fd, &c, 1);
+	ft_putnbr_fd(n, 1);
 }

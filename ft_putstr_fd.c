@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 00:38:43 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 12:42:35 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/26 13:24:34 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/26 13:40:00 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	write(fd, &c, 1);
+	while (*s++)
+	{
+		ft_putchar_fd(*(s - 1), fd);
+	}
 }
