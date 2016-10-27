@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_numsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 01:18:32 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 21:25:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 21:26:55 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 22:36:56 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putnbr_fd(int n, int fd)
+int		ft_numsize(int n)
 {
-	int rev;
+	int	t;
 
-	rev = 0;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
+	t = 0;
 	if (n == 0)
 	{
-		ft_putchar_fd('0', fd);
-		return ;
+		return (1);
 	}
-	while (n > 0)
+	if (n < 0)
 	{
-		rev = (rev * 10) + n % 10;
+		n = -n;
+	}
+	while (n)
+	{
 		n /= 10;
+		t++;
 	}
-	while (rev > 0)
-	{
-		ft_putchar_fd((rev % 10) + '0', fd);
-		rev /= 10;
-	}
+	return (t);
 }

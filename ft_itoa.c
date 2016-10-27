@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 01:18:32 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 21:25:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 21:22:12 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 22:36:35 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_itoa(int n)
 {
-	int rev;
+	char	*p;
+	int		nsize;
+	int		neg;
 
-	rev = 0;
+	neg = 0;
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
+		neg = 1;
 	}
-	if (n == 0)
+	nsize = ft_numsize(n) + neg;
+	p = (char *)malloc(sizeof(char) * (nsize + 1));
+	p[nsize] = '\0';
+	while (nsize--)
 	{
-		ft_putchar_fd('0', fd);
-		return ;
-	}
-	while (n > 0)
-	{
-		rev = (rev * 10) + n % 10;
+		p[nsize] = ft_abs(n % 10) + '0';
 		n /= 10;
 	}
-	while (rev > 0)
+	if (neg == 1)
 	{
-		ft_putchar_fd((rev % 10) + '0', fd);
-		rev /= 10;
+		p[0] = '-';
 	}
+	return (p);
 }

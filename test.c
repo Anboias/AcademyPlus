@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:19:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 18:31:47 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/27 22:34:37 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,28 @@ int		main(int argc, char **argv)
 	else if (isEqual(c, "strtrim_front"))
 	{
 		printf("%d", ft_strtrim_front(f));
+	}
+	else if (isEqual(c, "countwords"))
+	{
+		printf("%d", ft_countwords(f, *argv[3]));
+	}
+	else if (isEqual(c, "strsplit"))
+	{
+		char **p;
+
+		p = ft_strsplit(f, *argv[3]);
+		while (*p){
+			printf("%s\n", *p);
+			*p++;
+		}
+	}
+	else if (isEqual(c, "numsize"))
+	{
+		printf("%d", ft_numsize(atoi(f)));
+	}
+	else if (isEqual(c, "itoa"))
+	{
+		printf("%s", ft_itoa(atoi(f)));
 	}
 	else
 		printf("This function doesn`t exist");
