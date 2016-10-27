@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:19:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 00:29:43 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/27 18:31:47 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ int		main(int argc, char **argv)
 	else if (isEqual(c, "memalloc"))
 	{
 		temp = atoi(f);
-		one_byte *memall = ft_memalloc(temp);
+		t_byte *memall = ft_memalloc(temp);
 		int i = 0;
 		while (*memall==0){
 			printf("%d\n", ++i);
-			*memall++;
+			memall++;
 		}
 		return (0);
 	}
@@ -100,6 +100,36 @@ int		main(int argc, char **argv)
 		temp = atoi(argv[4]);
 		printf("%d", ft_strncmp(f, argv[3], (size_t)temp));
 		printf("\n%d", strncmp(f, argv[3], (size_t)temp));
+	}
+	else if (isEqual(c, "strsub"))
+	{
+		printf("%s", ft_strsub(f, (unsigned int)atoi(argv[3]), (size_t)(atoi(argv[4]))));
+	}
+	else if (isEqual(c, "strcpy"))
+	{
+		printf("%s - my", ft_strcpy(f, argv[3]));
+		printf("\n%s - his", strcpy(f, argv[3]));
+	}
+	else if (isEqual(c, "strncpy"))
+	{
+		printf("%s", ft_strncpy(f, argv[3], (size_t)atoi(argv[4])));
+		printf("/n%s", strncpy(f, argv[3], (size_t)atoi(argv[4])));
+	}
+	else if (isEqual(c, "strjoin"))
+	{
+		printf("%s", ft_strjoin(f, argv[3]));
+	}
+	else if (isEqual(c, "strtrim"))
+	{
+		printf("%s", ft_strtrim(f));
+	}
+	else if (isEqual(c, "strtrim_end"))
+	{
+		printf("%d", ft_strtrim_end(f));
+	}
+	else if (isEqual(c, "strtrim_front"))
+	{
+		printf("%d", ft_strtrim_front(f));
 	}
 	else
 		printf("This function doesn`t exist");

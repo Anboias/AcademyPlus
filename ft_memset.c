@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 14:31:13 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 16:58:51 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/27 18:31:31 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	one_byte	*t;
+	t_byte	*t;
 
-	t = (one_byte *)s;
+	t = (t_byte *)s;
 	while (n--)
 	{
-		*t++ = (one_byte)c;
+		*t++ = (t_byte)c;
 	}
 	return (s);
 }

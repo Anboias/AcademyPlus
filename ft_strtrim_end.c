@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim_end.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:32:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 17:15:34 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 17:44:27 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 18:09:11 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+int		ft_strtrim_end(char const *s)
 {
-	free(*ap);
-	*ap = NULL;
+	int		len;
+
+	len = ft_strlen(s) - 1;
+	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
+	{
+		len--;
+	}
+	return (len);
 }

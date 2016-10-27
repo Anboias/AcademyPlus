@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:32:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 17:15:34 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 16:25:09 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 16:57:15 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strncpy(char *dest, char const *src, size_t n)
 {
-	free(*ap);
-	*ap = NULL;
+	char	*p;
+	size_t	start;
+
+	p = (char *)dest;
+	start = n;
+	while (*src && n--)
+	{
+		*dest++ = *src++;
+	}
+	if (n < start)
+	{
+		ft_bzero(dest, n);
+	}
+	return (p);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:32:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 17:15:34 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 17:42:15 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 18:09:04 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_memdel(void **ap)
+int		ft_strtrim_front(char const *s)
 {
-	free(*ap);
-	*ap = NULL;
+	int		i;
+
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	{
+		i++;
+	}
+	return (i);
 }

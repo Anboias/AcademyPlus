@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:32:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 17:15:34 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/27 16:14:49 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/27 16:54:24 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_memdel(void **ap)
+char	*ft_strcpy(char *dest, char const *src)
 {
-	free(*ap);
-	*ap = NULL;
+	char	*p;
+
+	if (!dest || !src)
+	{
+		return (dest);
+	}
+	p = (char *)dest;
+	while (*src)
+	{
+		*dest++ = *src++;
+	}
+	*dest = '\0';
+	return (p);
 }
