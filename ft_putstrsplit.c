@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_putstrsplit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 20:28:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 00:52:15 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 01:09:30 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 02:01:23 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+void	ft_putstrsplit(char const *str, char c)
 {
-	char				*p;
-	unsigned	int		i;
+	char	**p;
 
-	p = ft_stralloc(s);
-	if (p)
+	p = ft_strsplit(str, c);
+	while (*p)
 	{
-		i = -1;
-		while (s[++i])
-			p[i] = f(s[i]);
-		p[i] = '\0';
+		ft_putstr(*p++);
+		ft_putchar('\n');
 	}
-	return (p);
 }

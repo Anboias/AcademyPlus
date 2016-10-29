@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 20:28:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 00:52:15 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/28 20:24:14 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/28 20:39:47 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+size_t	ft_strlcat(char *dest, char const *src, size_t size)
 {
-	char				*p;
-	unsigned	int		i;
+	size_t left;
 
-	p = ft_stralloc(s);
-	if (p)
+	left = size;
+	while (*dest && left > 0 && left--)
 	{
-		i = -1;
-		while (s[++i])
-			p[i] = f(s[i]);
-		p[i] = '\0';
+		dest++;
 	}
-	return (p);
+	while (*src && left > 1 && left--)
+	{
+		*dest++ = *src++;
+	}
+	if (left == 1)
+	{
+		*dest = '\0';
+	}
+	return (size - left);
 }

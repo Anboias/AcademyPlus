@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 20:28:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 00:52:15 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/29 18:38:04 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/29 19:23:55 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char				*p;
-	unsigned	int		i;
-
-	p = ft_stralloc(s);
-	if (p)
+	while (*haystack)
 	{
-		i = -1;
-		while (s[++i])
-			p[i] = f(s[i]);
-		p[i] = '\0';
+		if (*haystack == *needle)
+		{
+			if (ft_strncmp(haystack, needle, ft_strlen(needle)) == 0)
+			{
+				return ((char *)haystack);
+			}
+		}
+		haystack++;
 	}
-	return (p);
+	return (NULL);
 }

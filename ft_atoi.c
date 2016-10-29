@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 20:28:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 00:52:15 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/29 19:38:06 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 00:26:36 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmap(char const *s, char (*f)(char))
+int		ft_atoi(const char *nptr)
 {
-	char				*p;
-	unsigned	int		i;
+	int	sign;
+	int num;
 
-	p = ft_stralloc(s);
-	if (p)
+	num = 0;
+	sign = 1;
+	while (*nptr > 9 && *nptr < 13 || *nptr == ' ')
+		nptr++;
+	if (*nptr == '+')
+		nptr++;
+	else if (*nptr == '-')
 	{
-		i = -1;
-		while (s[++i])
-			p[i] = f(s[i]);
-		p[i] = '\0';
+		sign = -1;
+		nptr++;
 	}
-	return (p);
+	while (*nptr == '0')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9' && *nptr)
+		num = num * 10 + (*nptr++ - '0');
+	return (num * sign);
 }
