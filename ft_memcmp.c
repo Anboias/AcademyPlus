@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:44:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:08:47 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 22:49:31 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 23:40:59 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(char const *c)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-
-	i = 0;
-	while (*c++)
+	if (!s1 || !s2)
+		return (0);
+	while (n--)
 	{
-		i++;
+		if ((*(t_byte *)s1 != *(t_byte *)s2 ||
+				(!*(t_byte *)s1 && !*(t_byte *)s2)))
+			return (*(t_byte *)s1 - *(t_byte *)s2);
+		s1++;
+		s2++;
 	}
-	return (i);
+	return (0);
 }

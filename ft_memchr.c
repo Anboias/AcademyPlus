@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:44:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:08:47 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 22:46:27 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 22:55:00 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(char const *c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
-
-	i = 0;
-	while (*c++)
+	if (!s)
+		return (NULL);
+	while (n--)
 	{
-		i++;
+		if (*(t_byte *)s == (t_byte)c)
+			return ((void *)s);
+		s++;
 	}
-	return (i);
+	return (NULL);
 }

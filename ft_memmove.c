@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/26 15:44:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:08:47 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 20:42:07 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 22:48:44 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(char const *c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t i;
+	void	*p;
 
-	i = 0;
-	while (*c++)
+	if (!dest || !src)
+		return (dest);
+	p = dest;
+	if (dest < src)
 	{
-		i++;
+		while ((size_t)(dest - p) < n)
+			*(t_byte *)dest++ = *(t_byte *)src++;
 	}
-	return (i);
+	else
+	{
+		while (n-- > 0)
+			((t_byte *)dest)[n] = ((t_byte *)src)[n];
+	}
+	return (p);
 }

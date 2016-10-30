@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:19:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:58:03 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/30 23:11:36 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	main(int argc, char **argv)
 	else if (!ft_strcmp(c, "strlen"))	printf("%d", (int)strlen(f));
 	else if (!ft_strcmp(c, "strmap"))	printf("%s", ft_strmap(f, funct));
 	else if (!ft_strcmp(c, "strequ"))	printf("%d", ft_strequ(f, g));
-	else if (!ft_strcmp(c, "strnequ"))	printf("%d", ft_strnequ(f, g, (size_t)atoi(h)));
+	else if (!ft_strcmp(c, "strnequ"))	printf("%d", ft_strnequ(f, g, atoi(h)));
 	else if (!ft_strcmp(c, "strcmp"))	printf("%d", ft_strcmp(f, g));
-	else if (!ft_strcmp(c, "strncmp"))	printf("%d", ft_strncmp(f, g, (size_t)atoi(h)));
-	else if (!ft_strcmp(c, "strsub"))	printf("%s", ft_strsub(f, atoi(g), (size_t)(atoi(h))));
+	else if (!ft_strcmp(c, "strncmp"))	printf("%d", ft_strncmp(f, g, atoi(h)));
+	else if (!ft_strcmp(c, "strsub"))	printf("%s", ft_strsub(f, atoi(g), (atoi(h))));
 	else if (!ft_strcmp(c, "strcpy"))	printf("%s", ft_strcpy(f, g));
-	else if (!ft_strcmp(c, "strncpy"))	printf("%s", ft_strncpy(f, g, (size_t)atoi(h)));
+	else if (!ft_strcmp(c, "strncpy"))	printf("%s", ft_strncpy(f, g, atoi(h)));
 	else if (!ft_strcmp(c, "strjoin"))	printf("%s", ft_strjoin(f, g));
 	else if (!ft_strcmp(c, "strtrim"))	printf("%s", ft_strtrim(f));
 	else if (!ft_strcmp(c, "strtrim_end"))		printf("%d", ft_strtrim_end(f));
@@ -64,11 +64,11 @@ void	main(int argc, char **argv)
 	else if (!ft_strcmp(c, "strndup"))	printf("%s", ft_strndup(f, atoi(g)));
 	else if (!ft_strcmp(c, "strcat"))	printf("%s", ft_strcat(f, g));
 	else if (!ft_strcmp(c, "strncat"))	printf("%s", ft_strncat(f, g, atoi(h)));
-	else if (!ft_strcmp(c, "strlcat"))	printf("%d", (int)ft_strlcat(f, g, (size_t)(atoi(h))));
-	else if (!ft_strcmp(c, "strchr"))	printf("%s", ft_strchr(f, (int)*g));
-	else if (!ft_strcmp(c, "strrchr"))	printf("%s", ft_strrchr(f, (int)*g));
+	else if (!ft_strcmp(c, "strlcat"))	printf("%d", (int)ft_strlcat(f, g, (atoi(h))));
+	else if (!ft_strcmp(c, "strchr"))	printf("%s", ft_strchr(f, *g));
+	else if (!ft_strcmp(c, "strrchr"))	printf("%s", ft_strrchr(f, *g));
 	else if (!ft_strcmp(c, "strstr"))	printf("%s", ft_strstr(f, g));
-	else if (!ft_strcmp(c, "strnstr"))	printf("%s", ft_strnstr(f, g, (size_t)atoi(h)));
+	else if (!ft_strcmp(c, "strnstr"))	printf("%s", ft_strnstr(f, g, atoi(h)));
 	else if (!ft_strcmp(c, "isalpha"))  printf("%d", ft_isalpha(*f));
 	else if (!ft_strcmp(c, "isdigit"))  printf("%d", ft_isdigit(*f));
 	else if (!ft_strcmp(c, "isalnum"))  printf("%d", ft_isalnum(*f));
@@ -78,6 +78,11 @@ void	main(int argc, char **argv)
 	else if (!ft_strcmp(c, "toupper"))  printf("%d", ft_toupper(*f));
 	else if (!ft_strcmp(c, "tolower"))  printf("%d", ft_tolower(*f));
 	else if (!ft_strcmp(c, "atoi"))		printf("%d", ft_atoi(f));
+	else if (!ft_strcmp(c, "memset"))	printf("%s", (char *)ft_memset(f, *g, atoi(h)));
+	else if (!ft_strcmp(c, "memcpy"))	printf("%s", (char *)ft_memcpy(f, g, atoi(h)));
+	else if (!ft_strcmp(c, "memmove"))	printf("%s", (char *)ft_memmove(f, g, atoi(h)));
+	else if (!ft_strcmp(c, "memchr"))	printf("%s", (char *)ft_memchr(f, *g, atoi(h)));
+	else if (!ft_strcmp(c, "memcmp"))	printf("%d", ft_memcmp(f, g, atoi(h)));
 	else
 		printf("This function doesn`t exist");
 	printf("\n");
@@ -91,4 +96,9 @@ void	main(int argc, char **argv)
 	else if (!ft_strcmp(c, "isprint"))  printf("Built-in fnct: %d\n", isprint(*f));
 	else if (!ft_strcmp(c, "toupper"))  printf("Built-in fnct: %d\n", toupper(*f));
 	else if (!ft_strcmp(c, "tolower"))  printf("Built-in fnct: %d\n", tolower(*f));
+	else if (!ft_strcmp(c, "memset"))	printf("Built-in fnct: %s\n", (char *)memset(f, *g, atoi(h)));
+	else if (!ft_strcmp(c, "memcpy"))	printf("Built-in fnct: %s (can be overlaped only manually by replacing g with f+ as parameter) \n", (char *)ft_memcpy(f, g, atoi(h)));
+	else if (!ft_strcmp(c, "memmove"))	printf("Built-in fnct: %s (can be overlaped only manually by replacing g with f+ as parameter)\n", (char *)memmove(f, g, atoi(h)));
+	else if (!ft_strcmp(c, "memchr"))	printf("Built-in fnct: %s\n", (char *)memchr(f, *g, atoi(h)));
+	else if (!ft_strcmp(c, "memcmp"))	printf("Built-in fnct: %d\n", memcmp(f, g, atoi(h)));
 }
