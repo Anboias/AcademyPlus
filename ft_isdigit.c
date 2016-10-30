@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/28 20:45:35 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:50:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 14:45:25 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 15:03:33 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+int		ft_isdigit(int c)
 {
-	while (*s != c && *s)
-	{
-		s++;
-	}
-	if (*s == '\0')
-	{
-		return (NULL);
-	}
-	return ((char *)s);
+	if (c >= 48 && c <= 57)
+		return (2048);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:31:14 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 01:37:22 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/30 18:01:59 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_putnbr(int n);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putstr(char const *s);
 void	ft_putstrsplit(char const *s, char c);
-void	ft_putstr_ln(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putendl(char const *s);
 
@@ -33,6 +32,15 @@ int		ft_strcmp(char const *s1, char const *s2);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
+
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_iscntrl(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);

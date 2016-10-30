@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/28 20:45:35 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:50:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 15:23:33 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 15:42:20 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_iscntrl(int c)
 {
-	while (*s != c && *s)
-	{
-		s++;
-	}
-	if (*s == '\0')
-	{
-		return (NULL);
-	}
-	return ((char *)s);
+	if (c >= 0 && c <= 31 || c == 127)
+		return (1);
+	return (0);
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/28 20:45:35 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:50:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 17:55:23 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 18:04:18 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_toupper(int c)
 {
-	while (*s != c && *s)
+	if (ft_isalpha(c))
 	{
-		s++;
+		if (c >= 97 && c <= 122)
+			c -= 32;
 	}
-	if (*s == '\0')
-	{
-		return (NULL);
-	}
-	return ((char *)s);
+	return (c);
 }

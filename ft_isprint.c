@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/28 20:45:35 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:50:21 by biasinov         ###   ########.fr       */
+/*   Created: 2016/10/30 15:31:14 by biasinov          #+#    #+#             */
+/*   Updated: 2016/10/30 15:43:01 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_isprint(int c)
 {
-	while (*s != c && *s)
-	{
-		s++;
-	}
-	if (*s == '\0')
-	{
-		return (NULL);
-	}
-	return ((char *)s);
+	if (!ft_iscntrl(c))
+		return (16384);
+	return (0);
 }
