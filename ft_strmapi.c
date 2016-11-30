@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 23:04:37 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 23:19:58 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:29:23 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		i = -1;
 		while (s[++i])
-		{
 			p[i] = f(i, s[i]);
-		}
 		p[i] = '\0';
 	}
 	return (p);

@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 19:31:43 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 19:43:20 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/31 14:13:42 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ int		ft_countwords(char const *s, char c)
 	{
 		i = 0;
 		while (*s == c && *s)
-		{
 			s++;
-		}
 		while (*s != c && *s)
 		{
 			s++;
 			i++;
 		}
 		if (i > 0)
-		{
 			w++;
-		}
 	}
 	return (w);
 }

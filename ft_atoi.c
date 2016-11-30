@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/29 19:38:06 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:46:18 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 12:32:05 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_atoi(const char *nptr)
 
 	num = 0;
 	sign = 1;
-	while (*nptr > 9 && *nptr < 13 || *nptr == ' ')
+	while ((*nptr > 9 && *nptr < 13) || *nptr == ' ')
 		nptr++;
 	if (*nptr == '+')
 		nptr++;

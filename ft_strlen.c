@@ -6,11 +6,11 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 15:44:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:08:47 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:28:52 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(char const *c)
 {
@@ -18,8 +18,6 @@ size_t	ft_strlen(char const *c)
 
 	i = 0;
 	while (*c++)
-	{
 		i++;
-	}
 	return (i);
 }

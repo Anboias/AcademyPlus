@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:40:20 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 17:06:00 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:04:11 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ char	*ft_strnew(size_t size)
 {
 	char	*p;
 
-	p = (char *)ft_memalloc(size);
+	p = (char *)ft_memalloc(size + 1);
 	return (p);
 }

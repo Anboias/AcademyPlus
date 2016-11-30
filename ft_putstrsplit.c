@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/30 01:09:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 02:01:23 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/10/31 15:21:53 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,5 @@ void	ft_putstrsplit(char const *str, char c)
 
 	p = ft_strsplit(str, c);
 	while (*p)
-	{
-		ft_putstr(*p++);
-		ft_putchar('\n');
-	}
+		ft_putendl(*p++);
 }

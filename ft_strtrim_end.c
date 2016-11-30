@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 17:44:27 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/27 18:09:11 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:17:03 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int		ft_strtrim_end(char const *s)
 
 	len = ft_strlen(s) - 1;
 	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
-	{
 		len--;
-	}
 	return (len);
 }

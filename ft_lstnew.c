@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/27 21:22:12 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 10:38:30 by biasinov         ###   ########.fr       */
+/*   Created: 2016/11/30 11:34:08 by biasinov          #+#    #+#             */
+/*   Updated: 2016/11/30 11:58:08 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*p;
-	int		nsize;
-	int		neg;
+	t_list	*l;
 
-	neg = 0;
-	if (n < 0)
-		neg = 1;
-	nsize = ft_numsize(n) + neg;
-	p = (char *)malloc(sizeof(char) * (nsize + 1));
-	p[nsize] = '\0';
-	while (nsize--)
+	if ((l = (t_list *)malloc(sizeof(t_list))) == NULL)
+		return (NULL);
+	if (content == NULL)
 	{
-		p[nsize] = ft_abs(n % 10) + '0';
-		n /= 10;
+		l->content = NULL;
+		l->content_size = 0;
 	}
-	if (neg == 1)
-		p[0] = '-';
-	return (p);
+	else
+	{
+		if ((l->content = malloc(content_size)) == NULL)
+		{
+			free(l);
+			return (NULL);
+		}
+		ft_memcpy((l->content), content, sizeof(content));
+		l->content_size = (size_t *)content_size;
+	}
+	l->next = NULL;
+	return (l);
 }

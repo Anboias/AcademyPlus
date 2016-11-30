@@ -6,11 +6,10 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:59:50 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:52:23 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:16:40 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
@@ -21,9 +20,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (p)
 	{
 		while (start--)
-		{
 			s++;
-		}
 		ft_strncpy(p, s, len);
 		p[len] = '\0';
 	}

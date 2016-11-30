@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/25 20:31:14 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 23:55:45 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:27:58 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdlib.h>
 
 typedef	unsigned char		t_byte;
 

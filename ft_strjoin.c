@@ -6,11 +6,10 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 16:57:42 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/28 20:23:29 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:27:06 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -21,12 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p = (char *)malloc((sizeof(char)) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	c = p;
 	while (*s1)
-	{
 		*p++ = *s1++;
-	}
 	while (*s2)
-	{
 		*p++ = *s2++;
-	}
 	return (c);
 }

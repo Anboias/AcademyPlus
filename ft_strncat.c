@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/28 19:23:11 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/28 21:20:48 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:01:47 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 
 	p = dest;
 	while (*dest)
-	{
 		dest++;
-	}
 	while (n-- && *src)
-	{
 		*dest++ = *src++;
-	}
 	*dest = '\0';
 	return (p);
 }

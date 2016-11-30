@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 17:07:06 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/26 17:12:35 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:24:36 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

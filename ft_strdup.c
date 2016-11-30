@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/28 18:49:16 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/28 19:10:26 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:24:55 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(char const *s)
 
 	p = ft_stralloc(s);
 	if (p)
-	{
 		p = ft_strcpy(p, s);
-	}
 	return (p);
 }

@@ -6,11 +6,11 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 15:32:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 19:53:02 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 10:40:18 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {

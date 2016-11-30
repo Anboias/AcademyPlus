@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/28 20:45:35 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:50:21 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/11/30 11:23:54 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != c && *s)
-	{
 		s++;
-	}
 	if (*s == '\0')
-	{
 		return (NULL);
-	}
 	return ((char *)s);
 }
