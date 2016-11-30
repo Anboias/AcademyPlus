@@ -1,1 +1,1 @@
-My libft project.
+My projects within the academy.
