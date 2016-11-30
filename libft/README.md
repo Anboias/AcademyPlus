@@ -1,1 +1,1 @@
-A library consisting 50+ basic functions.
+A library consisting of 50+ basic functions.
