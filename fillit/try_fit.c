@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 21:43:53 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/08 23:11:30 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 11:04:34 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Checks if given tetrimino fits in empty spot found.
 */
 
-int		try_fit(char map[][4], int x, int y, t_p *tetriminos)
+int		try_fit(char map[][4], int x, int y, t_p *tetriments)
 {
 	int i;
 	int posX;

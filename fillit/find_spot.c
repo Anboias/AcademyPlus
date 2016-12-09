@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 19:47:31 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/09 11:01:08 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 11:04:03 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ void	find_spot(char map[4][4])
 	int x;
 	int y;
 
-	sw = 0;
+	switch_var = 0;
 	base = 0;
-	i = 0;
+	increment = 0;
 	x = 0;
 	y = 0;
 	find_the_spot(map, 1, &switch_var, &base, &increment, &x, &y);

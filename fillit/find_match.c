@@ -6,12 +6,12 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 23:07:05 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/08 23:11:27 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 11:03:01 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //sketch//
-
+/*
 void	find_match(map, t_p *tetriments, int size)
 {
 	int i;
@@ -26,4 +26,4 @@ void	find_match(map, t_p *tetriments, int size)
 			put_element();
 		}
 	}
-}
+}*/
