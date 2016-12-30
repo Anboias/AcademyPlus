@@ -6,11 +6,12 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 19:47:31 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/09 11:04:03 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 14:38:55 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillheader.h"
+#include "libft.h"
 
 /*
 ** Search for the next free spot
@@ -39,14 +40,15 @@ void	switcher(int *sw, int *y, int *i, int *x, int *base)
 	}
 }
 
-void	find_the_spot(char map[4][4], int n, int *sw, 
+t_c		find_the_spot(char map[][15], int n, int *sw, 
 							int *base, int *i, int *x, int *y)
 {
 	while (n != 0)
 	{
 		if (map[*y][*x] == '.')
 		{
-			map[*y][*x] = n + '0';
+//			map[*y][*x] = n + '0';
+			return	(t_c){*x, *y};
 			*x = 0;
 			*y = 0;
 			*sw = 0;
@@ -62,9 +64,10 @@ void	find_the_spot(char map[4][4], int n, int *sw,
 		}
 		switcher(sw, y, i, x, base);
 	}
+	return (t_c){99,99};
 }
 
-void	find_spot(char map[4][4])
+t_c		find_spot(char map[][15])
 {
 	int switch_var;
 	int base;
@@ -77,5 +80,5 @@ void	find_spot(char map[4][4])
 	increment = 0;
 	x = 0;
 	y = 0;
-	find_the_spot(map, 1, &switch_var, &base, &increment, &x, &y);
+	return find_the_spot(map, 9, &switch_var, &base, &increment, &x, &y);
 }

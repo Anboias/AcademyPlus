@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:33:03 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/08 22:36:15 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 12:58:17 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ void	put_elem(char *buff, t_p tetriments[27], int w, int h, int i, int elem)
 			tetriments[i].pos[elem % 4].y = (h - i) % 4;
 			elem++;
 			if (elem % 4 == 0 && elem != 0)
+			{
+				tetriments[i].index = i + 65;
 				i++;
+			}
 		}
 		if (i == 27)
 			error_exit(4);

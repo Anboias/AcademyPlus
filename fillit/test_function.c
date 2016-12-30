@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 21:50:21 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/08 23:04:13 by biasinov         ###   ########.fr       */
+/*   Updated: 2016/12/09 11:53:41 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	test_print(t_p *all, int size)
 				  || all[j].pos[1].x == xx && all[j].pos[1].y == yy
 				  || all[j].pos[2].x == xx && all[j].pos[2].y == yy
 				  || all[j].pos[3].x == xx && all[j].pos[3].y == yy )
-					printf("#");
+					printf("%c",j + 65);
 				else
 					printf(".");
 			}
@@ -38,23 +38,17 @@ void	test_print(t_p *all, int size)
 	}	
 }
 
-void	test_find_spot()
+void	test_find_spot(char map[][15])
 {
-	char map[4][4] =   {{'#','#','#', '.'},
-						{'#','.','.', '.'},
-						{'.','.','.', '.'},
-						{'.','.','.', '.'}};
-
 	find_spot(map);
 
-	for (int j = 0; j < 4; j++)
+	for (int j = 0; j < 15; j++)
 	{
-		for (int k = 0; k < 4; k++)
+		for (int k = 0; k < 15; k++)
 		{
 			printf("%c ",map[j][k]);
 		}
 		printf("\n");
 	}
 	printf("\n");
-
 }

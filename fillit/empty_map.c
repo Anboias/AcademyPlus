@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_fit.c                                          :+:      :+:    :+:   */
+/*   empty_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 21:43:53 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/09 14:39:08 by biasinov         ###   ########.fr       */
+/*   Created: 2016/12/09 11:14:16 by biasinov          #+#    #+#             */
+/*   Updated: 2016/12/09 11:37:58 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillheader.h"
 
-//de sters
-#include "stdio.h"
-
 /*
-** Checks if given tetrimino fits in empty spot found.
+** Initialize content of empty map to '.'
 */
 
-int		try_fit(char map[][15], int x, int y, t_p tetriminos)
+void	empty_map(char map[][15])
 {
 	int i;
 	int j;
-	int posX;
-	int posY;
 
 	i = 0;
-	while (j < 1)
+	while (i < 15)
 	{
-		x -= tetriminos.pos[0].x;
-		y -= tetriminos.pos[0].y;
-//		if (x < 0)
-//			return (1);
-		posX = tetriminos.pos[i].x + x;
-		posY = tetriminos.pos[i].y + y;
-		if (map[posY][posX] == '.' || map[posY][posX] == 'o')
-			i++;
-		else
+		j = 0;
+		while (j < 15)
+		{
+			map[i][j] = '.';
 			j++;
-		if (i == 4)
-			return (0);
+		}
+		i++;
 	}
-	return (1);
 }
