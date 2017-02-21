@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 20:28:10 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:29:04 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/07 13:26:01 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char				*p;
 	unsigned	int		i;
 
+	if (!s)
+		return (NULL);
 	p = ft_stralloc(s);
 	if (p)
 	{

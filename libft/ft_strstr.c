@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/29 18:38:04 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:16:07 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 18:34:38 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
+	int len;
+
+	len = ft_strlen(needle);
+	if (len == 0)
+		return ((char *)haystack);
 	while (*haystack)
 	{
 		if (*haystack == *needle)
 		{
-			if (ft_strncmp(haystack, needle, ft_strlen(needle)) == 0)
+			if (ft_strncmp(haystack, needle, len) == 0)
 				return ((char *)haystack);
 		}
 		haystack++;

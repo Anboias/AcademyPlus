@@ -6,18 +6,30 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/29 19:38:06 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 12:32:05 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/07 13:34:21 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *nptr)
+static	int	check_out_of_bounds(long int num, int sign)
 {
-	int	sign;
-	int num;
+	if (num > 922337203685477580)
+	{
+		if (sign == 1)
+			return (-1);
+		return (0);
+	}
+	return (1);
+}
+
+int			ft_atoi(const char *nptr)
+{
+	long int	sign;
+	long int	num;
 
 	num = 0;
 	sign = 1;
-	while ((*nptr > 9 && *nptr < 13) || *nptr == ' ')
+	while (*nptr == '\t' || *nptr == '\v' || *nptr == '\f' || *nptr == '\r'
+			|| *nptr == '\n' || *nptr == '\f' || *nptr == ' ')
 		nptr++;
 	if (*nptr == '+')
 		nptr++;
@@ -29,6 +41,10 @@ int		ft_atoi(const char *nptr)
 	while (*nptr == '0')
 		nptr++;
 	while (*nptr >= '0' && *nptr <= '9' && *nptr)
+	{
+		if (check_out_of_bounds(num, sign) != 1)
+			return (check_out_of_bounds(num, sign));
 		num = num * 10 + (*nptr++ - '0');
+	}
 	return (num * sign);
 }

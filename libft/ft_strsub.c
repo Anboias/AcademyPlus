@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:59:50 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:16:40 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 20:01:51 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char			*p;
 
+	if (!s)
+		return (NULL);
 	p = (char *)malloc(sizeof(char) * (len + 1));
 	if (p)
 	{

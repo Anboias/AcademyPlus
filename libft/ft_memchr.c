@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/30 22:46:27 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/31 14:56:43 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 16:27:43 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (!s)
-		return (NULL);
 	while (n--)
 	{
 		if (*(t_byte *)s == (t_byte)c)

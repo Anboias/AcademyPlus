@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 00:24:29 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/30 17:54:00 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 19:15:12 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_strncmp(char const *s1, char const *s2, size_t n)
 	}
 	if (n)
 	{
-		return ((int)*s1 - (int)*s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 	}
 	return (0);
 }

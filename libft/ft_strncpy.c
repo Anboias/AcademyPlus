@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 16:25:09 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:02:02 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 16:45:44 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strncpy(char *dest, char const *src, size_t n)
 {
-	char	*p;
-	size_t	start;
+	size_t	i;
 
-	p = (char *)dest;
-	start = n;
-	while (*src && n--)
-		*dest++ = *src++;
-	if (n < start)
-		ft_bzero(dest, n);
-	return (p);
+	i = 0;
+	while (src[i] != '\0' && (i < n))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

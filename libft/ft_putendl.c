@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:23:30 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/31 15:13:43 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/16 21:12:34 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putendl(const char *s)
 {
-	ft_putendl_fd(s, 1);
+	if (s)
+		ft_putendl_fd(s, 1);
 }

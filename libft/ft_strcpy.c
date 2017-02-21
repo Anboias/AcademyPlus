@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 16:14:49 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 12:02:06 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 16:34:37 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@ char	*ft_strcpy(char *dest, char const *src)
 {
 	char	*p;
 
-	if (!dest || !src)
-		return (dest);
 	p = dest;
 	while (*src)
 		*dest++ = *src++;

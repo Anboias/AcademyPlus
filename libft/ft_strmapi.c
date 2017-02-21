@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 23:04:37 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:29:23 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/07 13:25:46 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*p;
 
+	if (!s)
+		return (NULL);
 	p = (char *)ft_memalloc(ft_strlen(s) + 1);
 	if (p)
 	{

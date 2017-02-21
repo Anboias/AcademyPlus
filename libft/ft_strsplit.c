@@ -6,33 +6,53 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 19:07:58 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 11:14:11 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/07 13:34:27 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static	char	*ft_word(const char *str, char c, int *i)
 {
-	char	*p;
-	char	**pp;
-	char	**cc;
+	char	*s;
+	int		k;
 
-	pp = (char **)malloc(sizeof(char*) * (ft_countwords(s, c) + 1));
-	cc = pp;
-	while (*s)
+	if (!(s = (char *)malloc(sizeof(s) * (ft_strlen(str)))))
+		return (NULL);
+	k = 0;
+	while (str[*i] != c && str[*i])
 	{
-		if (*s == c)
-			s++;
-		else
-		{
-			p = (char *)malloc(sizeof(char) * (ft_firstwordsize(s, c) + 1));
-			*pp++ = p;
-			while (*s != c && *s)
-				*p++ = *s++;
-			*p = '\0';
-		}
+		s[k] = str[*i];
+		k++;
+		*i += 1;
 	}
-	*pp = '\0';
-	return (cc);
+	s[k] = '\0';
+	while (str[*i] == c && str[*i])
+		*i += 1;
+	return (s);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	int		i;
+	int		j;
+	int		wrd;
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	j = 0;
+	wrd = ft_countwords(s, c);
+	if (!(str = (char **)malloc(sizeof(str) * (wrd + 2))))
+		return (NULL);
+	while (s[i] == c && s[i])
+		i++;
+	while (j < wrd && s[i])
+	{
+		str[j] = ft_word(s, c, &i);
+		j++;
+	}
+	str[j] = NULL;
+	return (str);
 }

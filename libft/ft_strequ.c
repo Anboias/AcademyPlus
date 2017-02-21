@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 23:19:14 by biasinov          #+#    #+#             */
-/*   Updated: 2016/11/30 12:02:33 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/06 19:44:44 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (!*s1 || !*s2)
+	if (!s1 || !s2)
 		return (0);
 	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);

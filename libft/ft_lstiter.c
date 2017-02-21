@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 10:55:06 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/04 10:57:41 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/19 16:52:07 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	while (lst->next)
+	t_list	*tmp;
+
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
+		tmp = lst->next;
 		f(lst);
-		lst = lst->next;
+		lst = tmp;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 13:24:34 by biasinov          #+#    #+#             */
-/*   Updated: 2016/10/31 15:18:56 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/16 21:13:27 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	if (s)
+	{
+		while (*s)
+			ft_putchar_fd(*s++, fd);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: biasinov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 10:44:45 by biasinov          #+#    #+#             */
-/*   Updated: 2016/12/04 10:50:54 by biasinov         ###   ########.fr       */
+/*   Updated: 2017/01/09 12:33:42 by biasinov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list	*l;
+	t_list	*temp;
+	t_list	*list;
 
-	l = *alst;
-	while (l->next)
+	if (*alst == NULL)
+		return ;
+	list = *alst;
+	while (list != NULL)
 	{
-		ft_lstdelone(alst, del);
-		l = l->next;
+		temp = list->next;
+		ft_lstdelone(&list, del);
+		list = temp;
 	}
+	*alst = NULL;
 }
